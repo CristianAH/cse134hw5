@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Cristian Antonio Hernandez's website portfolio">
+    <meta name="keywords" content="experimental">
+    <meta name="author" content="Cristian Antonio Hernandez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/main.css" rel="stylesheet">
+
+        <link href="styles/main.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <script src="scripts/index.js" defer></script>
+    <title> Cristian's Experimental Workspace</title>
+
+</head>
+
+<body>
+    <header>
+    <nav class="navBar">
+        <p class="navLogo">Cristian Anotnio Hernandez</p>
+    
+    
+        <a href="#" class="menuToggle" id="moblie-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+    
+        <ul class="navMenu">
+            <li> <a href="index.html"> Home</a></li>
+            <li> <a href="experimental.html"> Experimental</a></li>
+            <li> <a href="education.html"> Education</a></li>
+            <li> <a href="contact.html"> Contact</a></li>
+        </ul>
+    </nav>
+        <h1> Experimental Page</h1>
+    </header>
+    <p> Toggle Day and Night Mode</p>
+    <p> Click the switch button down below to see the changes</p>
+    <label class="toggle" for="checkbox">
+        <input class="checkbox" name="" type="checkbox" id="checkbox">
+        <div class="toggle__fill"></div>
+    </label>
+    <h2> Tags</h2>
+    <ol class="tagEx">
+        <li> picture tag: <br>
+            <picture>
+                <source media="(min-width: 1400px)" srcset="images/minecraftbig.jpeg">
+                <source media="(min-width: 900px)" srcset="images/minecraftmedium.jpeg">
+                <source media="(min-width: 700px)" srcset="images/minecraftsmall.jpeg">
+
+
+                <img src="images/minecraftbig.jpeg" alt="minecraft poster">
+            </picture>
+        </li>
+        <li> iframe tage:<br>
+            <iframe src="./index.html" title="Displaying the home page"></iframe>
+        </li>
+        <li> audio tag: <br>
+            <audio controls>
+                <source src="audio/SubwooferLullaby.mp3" type="audio/mp3">
+            </audio>   
+        </li>
+        <li> video tag: <br>
+            <video controls>
+                <source src="videos/RickRoll.mp4 " type="video/mp4">
+            </video>
+        </li>
+        <li> canvas tag: <br>
+            <canvas id="demoCanvas" width="450" height="450" style="border: 1px solid black;"></canvas>
+            <script>
+                let firstCanvas = document.getElementById("demoCanvas");
+                let ctx = firstCanvas.getContext("2d");
+                ctx.fillStyle = "red";
+                ctx.fillRect(50, 200, 75, 100);
+            </script>
+        </li>
+        <li> svg tag: <br>
+           <svg width="75" height="100">
+            <rect width="75" height="100" style="fill:red;"/>
+           </svg>
+        </li>
+        <li> code & pre tags: <br>
+            <pre>
+                <code>
+int main()
+{
+    printf("Hello World");
+}
+                </code>
+            </pre>
+        </li>
+        <li> optgroup: <br>
+            <select name="VideoGames">
+                <optgroup label="Playstaion">
+                    <option value="Playstation 3"> PlayStation 3</option>
+                    <option value="Playstation 4"> PlayStation 4</option>
+                    <option value="Playstation 5"> Playstation 5</option>
+                </optgroup>
+                <optgroup label="Xbox">
+                    <option value="Xbox 360"> Xbox 360</option>
+                    <option value="Xbox one"> Xbox one</option>
+                    <option value="Xbox Series S/X"> Xbox Series S/X</option>
+                </optgroup>
+                <optgroup label="Nintendo">
+                    <option value="Nintendo 3Ds"> Nintendo 3Ds</option>
+                    <option value="Nintendo Switch"> Nintendo Switch</option>
+                    <option value="Nintendo Wii"> Nintendo Wii</option>
+                </optgroup>
+            </select>
+        </li>
+        <li> datalist tag: <br>
+            <label> Phone Brand:</label>
+            <input list="phones" type="text" name="phoneType">
+            <datalist id="phones">
+                <option value="Apple"></option>
+                <option value="Samsung"></option>
+                <option value="Google"></option>
+                <option value="Sony"></option>
+            </datalist>
+        </li>
+        <li> table tag: <br>
+            <table>
+                <caption> Cities Area Code</caption>
+                <colgroup>
+                    <col span="3" style="background-color: lightcoral">
+
+                </colgroup>
+                <tr>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Area Code</th>
+                </tr>
+                <tr>
+                    <td> Massachusetts</td>
+                    <td> Boston</td>
+                    <td> 617</td>
+                </tr>
+
+                <tr>
+                    <td> Illinois</td>
+                    <td> Chicago</td>
+                    <td> 312</td>
+                </tr>
+
+                <tr>
+                    <td> California</td>
+                    <td> San Diego</td>
+                    <td> 619</td>
+                </tr>
+
+            </table>
+        </li>
+    </ol>
+
+</body>
+
+</html>

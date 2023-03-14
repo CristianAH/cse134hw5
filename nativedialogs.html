@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="portfolio">
+    <meta name="keywords" content="portfolio">
+    <meta name="author" content="Cristian Antonio Hernandez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/node_modules/dompurify/dist/purify.js"></script>
+    <script src="scripts/hw4.js"> defer</script>
+    <script src="scripts/index.js" defer></script>
+    <link href="styles/main.css" rel="stylesheet">
+
+    <title> Simple Dialogs</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navBar">
+            <p class="navLogo">Cristian Anotnio Hernandez</p>
+        
+        
+            <a href="#" class="menuToggle" id="moblie-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        
+            <ul class="navMenu">
+                <li> <a href="index.html"> Home</a></li>
+                <!--
+                            <li> <a href="experimental.html"> Experimental</a></li>
+                            <li> <a href="education.html"> Education</a></li>
+                            <li> <a href="contact.html"> Contact</a></li>
+                            -->
+                <li> <a href="nativedialogs.html"> Simple Dialogs</a></li>
+                <li> <a href="customdialogs.html"> Custom Dialogs</a></li>
+                <li> <a href="crud.html"> CRUD</a></li>
+                <li> <a href="styledcrud.html"> Styled CRUD</a></li>
+            </ul>
+        
+        </nav>
+        <h1> Simple Dialogs</h1>
+        <p> Toggle Day and Night Mode</p>
+        <p> Click the switch button down below to see the changes</p>
+        <label class="toggle" for="checkbox">
+            <input class="checkbox" name="" type="checkbox" id="checkbox">
+            <div class="toggle__fill"></div>
+        </label>
+    </header>
+
+    <button id="alertB" type="button">Alert</button>
+    <button id="confirmB" type="button"> Confirm</button>
+    <button id="promptB"> Prompt</button>
+    <button id="spromptB" onclick="saferP()"> Safer Prompt</button>
+    <script>
+        function saferP()
+        {
+            let dirty = prompt('What is your name?') ;
+            let clean = DOMPurify.sanitize(dirty);
+
+            if (clean != null && dirty != null) {
+                document.getElementById('conRes').innerHTML = 'Prompt result: ' + clean;
+            }
+            else {
+                document.getElementById('conRes').innerHTML = 'Prompt result: User did not enter anything';
+            }
+            document.getElementById('conRes').style.display = 'block';
+        }
+    </script>
+    
+    <hr>
+    <p id="conRes" style="display: none"> Confirm result: true </p>
+
+</body>
+</html>
+
+

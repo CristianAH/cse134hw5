@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="contact page">
+    <meta name="keywords" content="contact">
+    <meta name="author" content="Cristian Antonio Hernandez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/main.css" rel="stylesheet">
+
+    <link href="styles/main.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <script src="scripts/index.js" defer></script>
+    <title> Contact Page</title>
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navBar">
+            <p class="navLogo">Cristian Anotnio Hernandez</p>
+        
+        
+            <a href="#" class="menuToggle" id="moblie-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        
+            <ul class="navMenu">
+                <li> <a href="index.html"> Home</a></li>
+                <li> <a href="experimental.html"> Experimental</a></li>
+                <li> <a href="education.html"> Education</a></li>
+                <li> <a href="contact.html"> Contact</a></li>
+            </ul>
+        
+        </nav>
+        <h1> Contact Me</h1>
+    </header>
+    <p> Toggle Day and Night Mode</p>
+    <p> Click the switch button down below to see the changes</p>
+    <label class="toggle" for="checkbox">
+        <input class="checkbox" name="" type="checkbox" id="checkbox">
+        <div class="toggle__fill"></div>
+    </label>
+    <main>
+        <div class="contactForm">
+            <form>
+                <fieldset>
+                    <legend> <span class="number"> 1</span> Your basic information.</legend>
+                    <label for="fname">Name: </label>
+                    <input type="text" id="fname" name="fname" placeholder="Name" required>
+                    <br>
+                    <label for="femail">Email: </label>
+                    <input type="email" id="femail" name="femail" placeholder="Email" required>
+                </fieldset>
+                <fieldset>
+                    <legend><span class="number">2</span> Message to me</legend>
+                    <label for="fsubject">Subject: </label>
+                    <input type="text" id="fsubject" name="fsubject" placeholder="Subject" required>
+                    <br>
+                    <label>Leave your message:</label>
+                    <br>
+                    <textarea name="fmessage" rows="5" cols="75" placeholder="Enter your message here." required> </textarea>
+                </fieldset>
+
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

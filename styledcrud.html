@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="blogs">
+    <meta name="keywords" content="blogs">
+    <meta name="author" content="Cristian Antonio Hernandez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/node_modules/dompurify/dist/purify.js"></script>
+
+    <script type="text/javascript" src="scripts/styledcustomdialogs.js"></script>
+
+    <script src="scripts/index.js" defer></script>
+    <link href="styles/styleC.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+
+    <title>Blogs</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navBar">
+            <p class="navLogo">Cristian Anotnio Hernandez</p>
+
+
+            <a href="#" class="menuToggle" id="moblie-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+            <ul class="navMenu">
+                <li> <a href="index.html"> Home</a></li>
+                <!--
+                <li> <a href="experimental.html"> Experimental</a></li>
+                <li> <a href="education.html"> Education</a></li>
+                <li> <a href="contact.html"> Contact</a></li>
+                -->
+                <li> <a href="nativedialogs.html"> Simple Dialogs</a></li>
+                <li> <a href="customdialogs.html"> Custom Dialogs</a></li>
+                <li> <a href="crud.html"> CRUD</a></li>
+                <li> <a href="styledcrud.html"> Styled CRUD</a></li>
+            </ul>
+
+        </nav>
+        <h1> Blogs</h1>
+        <p> Toggle Day and Night Mode</p>
+        <p> Click the switch button down below to see the changes</p>
+        <label class="toggle" for="checkbox">
+            <input class="checkbox" name="" type="checkbox" id="checkbox">
+            <div class="toggle__fill"></div>
+        </label>
+    </header>
+
+
+    <ul id="blogPosts">
+
+    </ul>
+
+    <button class="dialogB" id="addB"> Add Blog</button>
+
+    <dialog id="blogD">
+        <form method="dialog">
+            <label>Post Title:</label>
+            <input type='text' id="title" /> </br>
+
+            <label> Post Date: </label>
+            <input type="date" id="date" /> </br>
+
+            <label> Post Summary: </label>
+            <textarea id="sum"></textarea>
+
+            <button type="submit" value="Save"> Save </button>
+            <button type="submit" value="Cancel"> Cancel</button>
+        </form>
+    </dialog>
+
+    <script>
+        function saferP() {
+            window.blogD.showModal();
+
+
+
+            document.getElementById('blogD').addEventListener('close', () => {
+                /*
+                let retVal = document.getElementById('blogD').returnValue;
+                if (retVal != 'Cancel') {
+                    let dirty = document.getElementById("title").value;
+                    console.log(dirty);
+                    let clean = DOMPurify.sanitize(dirty);
+                    if (clean != null && dirty != '') {
+                        document.getElementById('conRes').innerHTML = `Prompt result: ${clean}`;
+                    }
+                    else {
+                        document.getElementById('conRes').innerHTML = 'Prompt result: User did not enter anything';
+                    }
+                }
+                else {
+                    document.getElementById('conRes').innerHTML = 'Prompt result: User cancel input';
+                }
+                */
+                let retVal = document.getElementById('blogD').returnValue;
+                if (retVal == 'Save') {
+                    let testTitle = document.getElementById('title').value;
+                    let testDate = document.getElementById('date').value;
+                    let testSum = document.getElementById('sum').value;
+
+                    /* Test each variable to determine if its valid */
+
+                    addItem(testTitle, testDate, testSum);
+                    document.getElementById('title').value = "";
+                    document.getElementById('date').value = "";
+                    document.getElementById('sum').value = "";
+
+
+
+                }
+
+
+            });
+        }
+
+
+    </script>
+
+    <hr>
+    <p id="conRes"> </p>
+
+</body>
+
+</html>

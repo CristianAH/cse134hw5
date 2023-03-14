@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="custom dialog">
+    <meta name="keywords" content="dialog">
+    <meta name="author" content="Custom Dialogs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/node_modules/dompurify/dist/purify.js"></script>
+    <script type="text/javascript" src="scripts/customdialog.js"></script>
+    <script src="scripts/index.js" defer></script>
+    <link href="styles/main.css" rel="stylesheet">
+
+    <title> Custom Dialogs</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navBar">
+            <p class="navLogo">Cristian Anotnio Hernandez</p>
+
+
+            <a href="#" class="menuToggle" id="moblie-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+            <ul class="navMenu">
+                <li> <a href="index.html"> Home</a></li>
+                <!--
+                            <li> <a href="experimental.html"> Experimental</a></li>
+                            <li> <a href="education.html"> Education</a></li>
+                            <li> <a href="contact.html"> Contact</a></li>
+                            -->
+                <li> <a href="nativedialogs.html"> Simple Dialogs</a></li>
+                <li> <a href="customdialogs.html"> Custom Dialogs</a></li>
+                <li> <a href="crud.html"> CRUD</a></li>
+                <li> <a href="styledcrud.html"> Styled CRUD</a></li>
+            </ul>
+        </nav>
+        <h1> Custom Dialogs</h1>
+        <p> Toggle Day and Night Mode</p>
+        <p> Click the switch button down below to see the changes</p>
+        <label class="toggle" for="checkbox">
+            <input class="checkbox" name="" type="checkbox" id="checkbox">
+            <div class="toggle__fill"></div>
+        </label>
+    </header>
+
+    <button id="alertB" type="button">Alert</button>
+    <button id="confirmB" type="button"> Confirm</button>
+    <button id="promptB" onclick="saferP()"> Prompt</button>
+
+    <dialog id="alertD">
+        <form method="dialog">
+            <p> Alert Pressed!</p>
+            <button> Ok </button>
+        </form>
+    </dialog>
+
+    <dialog id="confirmD">
+        <form method="dialog">
+            <p> Do you confirm this?</p>
+            <button type="submit" value="Ok"> Ok </button>
+            <button type="submit" value="Cancel"> Cancel</button>
+        </form>
+    </dialog>
+
+    <dialog id="promptD">
+        <form method="dialog">
+            <label>Name:</label> </br>
+            <input type='text' id="name"/>
+
+            <button type="submit" value="Ok"> Ok </button>
+            <button type="submit" value="Cancel"> Cancel</button>
+        </form>
+    </dialog>
+
+    <script>
+        function saferP() {
+            window.promptD.showModal();
+            
+                document.getElementById('promptD').addEventListener('close', () => {
+                let retVal = document.getElementById('promptD').returnValue;
+                console.log('submitting');
+                if (retVal != 'Cancel') 
+                {
+                    let dirty = document.getElementById("name").value;
+                    console.log(dirty);
+                    let clean = DOMPurify.sanitize(dirty);
+                    if (clean != null && dirty != '') {
+                        document.getElementById('conRes').innerHTML = `Prompt result: ${clean}`;
+                    }
+                    else {
+                        document.getElementById('conRes').innerHTML = 'Prompt result: User did not enter anything';
+                    }
+                }
+                else
+                {
+                    document.getElementById('conRes').innerHTML = 'Prompt result: User cancel input';
+                }
+            });
+        }
+
+        
+    </script>
+
+    <hr>
+    <p id="conRes"> </p>
+
+</body>
+</html>
